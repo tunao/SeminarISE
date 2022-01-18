@@ -1,0 +1,127 @@
+\documentclass[a4paper,10pt, bibliography=totocnumbered]{scrreprt}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[english]{babel}
+
+\usepackage{graphicx}
+\usepackage{pdfpages}
+%\usepackage{subfig}
+%\usepackage{microtype}
+\usepackage{tabularx}
+%\usepackage{amsmath, textcomp}
+
+% Custom packages
+\usepackage[numbers]{natbib}
+\usepackage{longtable}
+\usepackage{ragged2e}
+%\usepackage{tikz}
+%\usetikzlibrary{positioning}
+%\usepackage{pdflscape}
+%\usepackage{rotating}
+
+\usepackage{glossaries} 
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,        % false: boxed links; true: colored links
+    linkcolor=black,        % color of internal links
+%    citecolor=green,        % color of links to bibliography
+    citecolor=black,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=blue           % color of external links
+}
+
+
+%% Title Page
+\makeatletter
+\renewcommand{\maketitle}{\begin{titlepage}
+    \vskip 10\p@
+    \hbox{
+      \vrule depth 0.99\textheight
+        \mbox{\hspace{2em}}
+      \vtop{
+        \vskip 10\p@
+        \hspace{4pt}
+        \vskip 50\p@
+        \begin{flushleft}
+          \Large \@author \par
+        \end{flushleft}
+        \vskip 50\p@
+        \begin{flushleft}
+          \huge \bfseries \@title \par
+        \end{flushleft}
+        \begin{flushleft}
+          \Large \bfseries \@subtitle \par
+        \end{flushleft}
+        \vskip 70\p@
+        \begin{flushleft}
+          \Large \@publishers \par
+        \end{flushleft}
+        \vskip 50\p@
+        \begin{flushleft}
+          \Large \@date \par
+        \end{flushleft}
+        }}
+  \end{titlepage}
+}
+\makeatother
+
+\author{Benjamin Tuna}
+\title{Summarization in Bug Tracking Systems }
+\subtitle{ }
+\publishers{\textbf{Advisor University of Heidelberg}\\ Prof. Dr. Barbara Paech, Marcus Seiler}
+\date{01 31, 2022}
+
+
+
+% Deutsche Absaetze:
+\parindent 0pt
+\parskip 12pt
+
+\textwidth145mm
+\setlength{\oddsidemargin}{0.7cm}
+\setlength{\topmargin}{-0.5cm}
+\setlength{\textheight}{22.5cm}
+
+\begin{document}
+\maketitle
+
+\include{./content/0-Abstract}
+
+\tableofcontents
+
+\input{./content/1-Introduction}
+\input{./content/2-LiteratureSearch}
+\input{./content/3-Approach1}
+\input{./content/4-Approach2}
+\input{./content/5-Comparison}
+\input{./content/10-Conclusion}
+
+%% Bibliography
+\bibliographystyle{plainnat}
+%\bibliography{literature.bib}%Bibliography file name
+
+\begin{thebibliography}{9}
+
+\bibitem{tarar} Nawaz Tarar, M. Irtaza / Ahmed, Faizan / Butt, Wasi Haider : Automated Summarization of Bug Reports to speed-up software development/maintenance process by using Natural Language Processing (NLP) In: 15th International Conference on Computer Science Education (ICCSE) p. 483-488 (2020)
+
+\bibitem{koh}Koh, Youngji / Kang, Sungwon / Lee, Seonah : 
+Bug Report Summarization using Believability Score and Text Ranking
+In: International Conference on Artificial Intelligence in Information and Communication (ICAIIC) p. 117-120 (2021)
+
+\bibitem{liu} Liu, Haoran / Yu, Yue / Li, Shanshan / Guo, Yong / Wang, Deze / Mao, Xiaoguang 
+Bugsum: Deep context understanding for bug report summarization  
+Proceedings of the 28th International Conference on Program Comprehension (2020)
+
+\bibitem{lin}Lin, Chin-Yew 
+Rouge: A package for automatic evaluation of summaries  
+Text summarization branches out p. 74-81 (2004)
+
+
+\end{thebibliography}
+
+\listoffigures
+
+\listoftables
+
+\end{document}          
